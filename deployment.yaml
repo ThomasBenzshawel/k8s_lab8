@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todoapp
+  labels:
+    app: todoapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todoapp
+  # pod spec begins here
+  template:
+    metadata:
+      labels:
+        app: todoapp
+    spec:
+      containers:
+        - name: todoapp
+          image: registry.digitalocean.com/tutorial-reg/kubert
+
+
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+
+
