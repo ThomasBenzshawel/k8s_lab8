@@ -17,11 +17,10 @@ spec:
     spec:
       containers:
         - name: todoapp
-          image: registry.digitalocean.com/tutorial-reg/kubert
-
-
+          image: registry.digitalocean.com/tutorial-reg/flask-tutorial:0.0.2
           imagePullPolicy: Always
           ports:
             - containerPort: 5000
-
+      imagePullSecrets:
+        - name: regcred
 
